@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tab</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+	<link rel="stylesheet" type="text/css" href="../build/index.css">
+</head>
+<body>
+	
+	
+	
+	<div>特殊情况，tab长短差距较大</div>
+	<div class="h5-plugin-tab" id="J_Tabs">
+		<div class="h5-plugin-tab-in J_In">
+			<ul>
+				<li>
+					<a>1111111a111111111</a>
+				</li>
+				<li>
+					<a>2222y2222</a>
+				</li>
+				<li>
+					<a>33333z333333333333</a>
+				</li>
+				<li>
+					<a>444a4</a>
+				</li>
+				<li>
+					<a>666a666666666666</a>
+				</li>
+				<li>
+					<a>123a11113</a>
+				</li>
+				<li>
+					<a>He1231231llo</a>
+				</li>
+				<li>
+					<a>1111a11111</a>
+				</li>
+			</ul>
+			<div class="h5-plugin-tab-silder J_Slider"></div>
+		</div>
+	</div>
+	
+	<br/><br/><br/><br/><br/>
+	
+	<div>一般情况tab宽度基本一致</div>
+	<div class="h5-plugin-tab" id="J_Tabs2">
+		<div class="h5-plugin-tab-in J_In">
+			<ul>
+				<li>
+					<a>9.9元包邮疯抢</a>
+				</li>
+				
+				<li >
+					<a>热卖专区</a>
+				</li>
+				
+				<li >
+					<a>洗护清洁</a>
+				</li>
+				<li >
+					<a>食品保健</a>
+				</li>
+				<li >
+					<a>进口食品</a>
+				</li>
+				<li >
+					<a>母婴用品</a>
+				</li>
+				<li >
+					<a>内衣配饰</a>
+				</li>
+				<li >
+					<a>居家日用</a>
+				</li>
+			</ul>
+			<div class="h5-plugin-tab-silder J_Slider"></div>
+		</div>
+	</div>
+	<br/><br/><br/><br/>
+	<!--tab容器足够宽  居中-->
+	<div>tab容器足够宽  居中</div>
+	<div class="h5-plugin-tab" id="J_Tabs3">
+		<div class="h5-plugin-tab-in J_In">
+			<ul>
+				<li>
+					<a>Hello</a>
+				</li>
+				
+				<li >
+					<a>world</a>
+				</li>
+			</ul>
+			<div class="h5-plugin-tab-silder J_Slider"></div>
+		</div>
+	</div>
+	<!--zepto.js and FastClick-->
+	<script src="http://g.tbcdn.cn/ju/??h5-libs/1.0.1/libs.js,h5-compo/1.0.0/compo.js"></script>  
+	<!--Mulitpe.js-->
+	<script type="text/javascript" src="../build/app.debug.js"></script>
+	<script type="text/javascript">
+	
+		
+	var tab = new MulitpeTab( $('#J_Tabs'), {
+		gap:28
+	});
+	
+	tab.go(2);
+	
+	tab.addEventListener("onChange", function(index, prevIndex, $element){
+		//当前选中的序号，上一次的序号，当前选中的元素
+		console.log(arguments)	
+	});
+	
+	
+	
+	new MulitpeTab($('#J_Tabs2'), {
+		gap:28
+	}).go(1);
+	
+	
+	new MulitpeTab($('#J_Tabs3'),{
+		
+		gap:20
+		
+	}).go(1);
+			
+	</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+@import "compass/reset";
+@import "variable.scss";
+
+
+
+.h5-plugin-tab{
+	
+  height: 40px;
+  background: #f6f6f6;
+  position: relative;
+  z-index: 1000;
+  border-bottom: 1px solid #dcdcdc;
+  overflow:hidden;
+}
+
+.h5-plugin-tab-in{
+	  position: relative;
+	  white-space: nowrap;
+	  margin-right: 12px;
+	  margin-left: 12px;
+ 
+	  font-size: 0;
+	  height: 100%;
+	  overflow:scroll;
+	  overflow-y: hidden;
+	  -webkit-overflow-scrolling:touch;
+	  height:55px
+}
+
+.h5-plugin-tab li{
+	cursor: pointer;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	display: inline-block;
+}
+
+.h5-plugin-tab li a{
+    font-family: "Microsoft Yahei";
+    font-size: 13px;
+    display: block;
+    color: #999999;
+    text-decoration: none;
+}
+
+.h5-plugin-tab .on a{
+   
+    color: #f72862;
+}
+
+.h5-plugin-tab.center{
+	text-align:center;
+  height: 40px;
+  background: #f6f6f6;
+  position: relative;
+  z-index: 1000;
+  border-bottom: 1px solid #dcdcdc;
+  
+}
+
+.h5-plugin-tab.center ul{
+	
+	 display:-webkit-box;
+}
+
+.h5-plugin-tab.center li{
+	display: block !important;
+	-webkit-box-flex: 1;
+}
+
+
+.h5-plugin-tab-silder{
+	background: rgb(247, 40, 98);
+	height: 3px;
+	position: relative;
+	width: 0px;
+	display: block;
+	left: 0px;
+	-webkit-transition: -webkit-transform 0.2s ease-in-out, width 0.2s ease-out;
+	transition: -webkit-transform 0.2s ease-in-out, width 0.2s ease-out;
+	-webkit-transform: translateX(0px);
+	padding: 0px;
+	margin-top: -3px;
+	z-index: 10;
+}
