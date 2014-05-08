@@ -1,3 +1,17 @@
+/**
+	依赖固定的DEMO结构，请查考demo/app.html
+		#id
+			--.J_In
+				--.J_Silder
+
+	@param tab 容器$element zepto对象
+	@param options 其他配置参数
+		{
+			gap:0//tab之间的间距
+			time:0 //在PC中遇到过tab滑动页面渲染不完成的现象，可配置 time 要延迟渲染解决(time:300)
+		}
+*/
+
 function MulitpeTab( tab , options){ 
 
 	this.tab = tab;
@@ -12,7 +26,7 @@ function MulitpeTab( tab , options){
 	this.currentIndex = 0;
 	this.maxMarginLeft = 0;
 
-	
+	//支持的事列表件lie'b
 	this.eventName = ["onChange"];
 	this.eventHandle = {};
 	this.options = {
@@ -78,11 +92,14 @@ MulitpeTab.prototype = {
 		
 		var gap = this.options.gap;
 		
+		
 		if( this.isHaveScroll() ){
+			//需要滑动
 			this.tabs.css("margin-left", gap+"px");
 			this.tabs.eq(this.tabs.length-1).css("margin-right", gap+"px");
 			
 		}else{
+			//直接居中
 			this.options.gap = 0;
 			this.tab.addClass("center");
 			this.initOffsets();
@@ -93,6 +110,7 @@ MulitpeTab.prototype = {
 		//console.log(this.widths.length * this.options.gap + this.widthSum)
 		return this.offsets.length * this.options.gap + this.widthSum > this.maxWidth;
 	},
+	//事件帮顶
 	regEvent:function(){
 		var self = this;
 		this.prevTime = 0;
@@ -143,9 +161,9 @@ MulitpeTab.prototype = {
 		var startPosition = -distance;
 		
 		var itemOffset = null;
-		//向后移动，尽量避免出现半个的情况
+		
 		if( dir == 1 ){
-			
+			//向后移动，尽量避免出现一个tab显示一半的情况
 			for( var i=index, len = this.offsets.length; i< len; i++){
 				itemOffset= this.offsets[i];
 				
@@ -168,14 +186,15 @@ MulitpeTab.prototype = {
 		
 		return distance + patch;
 	},
-
+	
+	//设置滑动条的宽度与位置
 	setSilder:function( width, left ){
 		
 		this.silder.css("width", width+"px");
 		this.silder[0].style.webkitTransform = "translateX("+left+"px)";
 		//.scrollTo(left, 0)
 	},
-
+	//高亮当前tab并触发事件
 	updateCurrentIndex:function( index ){
 	   
 	    var currentIndex = this.currentIndex;
@@ -196,6 +215,8 @@ MulitpeTab.prototype = {
 		
 		//$("#J_NavtabIn ul").css("-webkit-transform","translateX("+ (xx) +"px)")
 		
+		// 18 = 300/16
+		// 按照 webkitRequestAnimationFrame 16毫秒调用一次，300毫秒的动画，保持在18步完成，较为流畅
 		this.scrollTo(this.tabIn[0], -xx, 18);// 18 = 300/16
 		
 		
@@ -214,7 +235,8 @@ MulitpeTab.prototype = {
 	next:function(){
 
 		var index = this.currentIndex+1;
-		if( index < this.counts){
+		console.log(index)
+		if( index < this.tabs.length){
 			this.go( index );
 		}
 

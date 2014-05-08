@@ -92,6 +92,14 @@
 	
 ````
 
+* `tab.go( index )`
+
+直接跳到第 index 个 tab, 序列从0开始
+
+```` javascript
+	tab.next( 1 )//跳到第2个tab
+````
+
 * `tab.next()`
 
 切换到下一个tab

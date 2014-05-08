@@ -32,11 +32,11 @@ module.exports = function(grunt){
                 }
             },
             "jsCombo":{
-                    files:{"<%= concat.jsCombo.dest  %>":['<%= concat.jsCombo.dest  %>']},
+                    files:{"<%= concat.jsCombo.dest  %>":['<%= concat.jsCombo.dest  %>']}
 					
             },
             "files2":{
-                    files:{"build/tab.js":['<%= concat.jsCombo.dest  %>']},
+                    files:{"build/tab.js":['<%= concat.jsCombo.dest  %>']}
 					
             }
         },
