@@ -1,7 +1,7 @@
 # tab
 * 移动端多tab得流畅展示
 * 依赖 zepto.js
-* demo
+* <http://jun-lu.github.io/tab/demo/app.html>
 
 #### 其他
 
@@ -13,14 +13,14 @@
 	
 	
 #### 使用方法
-* css
+* CSS
 
 
 
 ```` html
-	<link rel="stylesheet" href="../build/tab.css">
+	<link rel="stylesheet" href="../build/tab.css">	
 ````
-* js
+* JS
 
 
 
