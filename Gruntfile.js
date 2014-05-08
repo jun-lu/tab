@@ -19,7 +19,7 @@ module.exports = function(grunt){
             },
             "cssCombo": {
                 src: ['assets/css/stylesheets/app.css'],
-                dest: 'build/index.css'
+                dest: 'build/tab.css'
             }
         },
 
@@ -32,7 +32,12 @@ module.exports = function(grunt){
                 }
             },
             "jsCombo":{
-                    files:{"<%= concat.jsCombo.dest  %>":['<%= concat.jsCombo.dest  %>']}
+                    files:{"<%= concat.jsCombo.dest  %>":['<%= concat.jsCombo.dest  %>']},
+					
+            },
+            "files2":{
+                    files:{"build/tab.js":['<%= concat.jsCombo.dest  %>']},
+					
             }
         },
 
@@ -128,12 +133,11 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     
     //上线 grunt 
-    grunt.registerTask('dist', ['concat','uglify','cssmin']);
+    grunt.registerTask('dist', ['concat','uglify','cssmin','cssmin']);
     
     //windows 上这个任务有些问题
     grunt.registerTask('image',['imagemin']);
 
-    grunt.registerTask('dist',['uglify:jsCombo','uglify:jsCombo']);
     //开发 grunt dev
     grunt.registerTask('dev', ['connect:livereload','concat','watch']);
 }
