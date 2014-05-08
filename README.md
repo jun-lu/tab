@@ -118,3 +118,12 @@
 
 ## 其他
 * 建议使用 `FastClick.js` 提高页面 `click` 响应速度
+
+## 克隆项目
+```` shell
+	git clone https://github.com/jun-lu/tab.git
+	cd tab
+	npm install
+	grunt dev
+	//访问 <http://0.0.0.0:9000/demo/app.html>
+````
