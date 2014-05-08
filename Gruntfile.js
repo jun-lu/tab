@@ -130,14 +130,11 @@ module.exports = function(grunt){
     
     grunt.loadNpmTasks('grunt-contrib-connect');
     
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
     
     //上线 grunt 
     grunt.registerTask('dist', ['concat','uglify','cssmin','cssmin']);
     
-    //windows 上这个任务有些问题
-    grunt.registerTask('image',['imagemin']);
-
+    
     //开发 grunt dev
     grunt.registerTask('dev', ['connect:livereload','concat','watch']);
 }
