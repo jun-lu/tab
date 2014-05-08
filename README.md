@@ -1,7 +1,9 @@
 # tab
 * 移动端多tab流畅展示
 * 依赖 zepto.js
-* <http://jun-lu.github.io/tab/demo/app.html>
+* DEMO <http://jun-lu.github.io/tab/demo/app.html>
+* 扫码在手机中查看DEMO
+* ![DEMO](http://gtms03.alicdn.com/tps/i3/T1i6HkFGXcXXa7xbL2-592-600.png_240x240Q90.jpg)
 
 ## 说明
 
@@ -78,7 +80,7 @@
 
 * `tab.addEventListener(type, handle)`
 
-添加监听事件，目前仅支持一个`onChange`。当tab切换的时候出发
+添加监听事件，目前仅支持一个`onChange`。当tab切换的时候触发
 	
 ```` javascript
 	tab.addEventListener('onChange', function(index, prevIndex, $element){
@@ -106,4 +108,4 @@
 ````
 
 ## 其他
-	* 建议使用 `FastClick.js` 提高页面 `click` 响应速度
+* 建议使用 `FastClick.js` 提高页面 `click` 响应速度
