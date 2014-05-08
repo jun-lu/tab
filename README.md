@@ -17,20 +17,20 @@
 
 
 
-````
+```` html
 	<link rel="stylesheet" href="../build/tab.css">
 ````
 * js
 
 
 
-````	
+```` html
 	<script src="../build/tab.js"></script>
 ````
 
 * HTML
 
-````
+```` html
 	<!--
 		DOM 结构
 		-#id
@@ -54,7 +54,7 @@
 
 * 初始化
 
-````
+```` javascript
 	/**
 		@param  $element  容器zepto对象
 		@param  options 其他配置参数
