@@ -309,7 +309,7 @@ MulitpeTab.prototype = {
 //andriod 2.3 overflow:scroll 无效处理 放弃滑动缓动
 //alert(navigator.userAgent)
 //alert(navigator.userAgent.indexOf("Android 2."))
-if(navigator.userAgent.indexOf("Android 2.")){
+if(navigator.userAgent.indexOf("Android 2.") != -1){
 	MulitpeTab.prototype.touchScroll = function( elem ){
 		
 	    var el=elem[0]
