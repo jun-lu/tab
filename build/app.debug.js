@@ -56,6 +56,9 @@ MulitpeTab.prototype = {
 		this.render();
 		
 		this.regEvent();
+		
+		//andriod 2.3 无法滑动bug
+		this.touchScroll && this.touchScroll(this.tabIn);
 	},
 
 	initMaxWidth:function(){
@@ -236,7 +239,7 @@ MulitpeTab.prototype = {
 	next:function(){
 
 		var index = this.currentIndex+1;
-		console.log(index)
+		//console.log(index)
 		if( index < this.tabs.length){
 			this.go( index );
 		}
@@ -253,16 +256,15 @@ MulitpeTab.prototype = {
 		var current = ele.scrollLeft;
 		var duration = x;
 		var t = 0;
-		
+		var webkitRequestAnimationFrame = this.webkitRequestAnimationFrame;
 		//变化数字绝对值小于10直接设置到终点
-		if( Math.abs(duration-current) < 10 ){
+		if( Math.abs(duration-current) < 10){
 			time = 1;
 		}
 		
 		function run(){
 			
 			var c = easeOut(t+=1, current, duration-current, time);
-			
 			if( c != duration){
 				ele.scrollLeft = c;
 				webkitRequestAnimationFrame(run);
@@ -286,7 +288,13 @@ MulitpeTab.prototype = {
 			}
 		}	
 	},
-	
+	webkitRequestAnimationFrame:(function(){
+		return 	window.webkitRequestAnimationFrame == undefined ? function( run ){
+			setTimeout(function(){
+				run()
+			},20);
+		} : window.webkitRequestAnimationFrame;
+	})(),
 	addEventListener:function( type, handle ){
 		
 		if( this.eventName.indexOf( type ) ){
@@ -298,3 +306,32 @@ MulitpeTab.prototype = {
 	}
 	
 };
+
+//andriod 2.3 overflow:scroll 无效处理 放弃滑动缓动
+//alert(navigator.userAgent)
+//alert(navigator.userAgent.indexOf("Android 2."))
+if(navigator.userAgent.indexOf("Android 2.")){
+	MulitpeTab.prototype.touchScroll = function( elem ){
+		
+	    var el=elem[0]
+	    var scrollStartPos=0;
+		
+		function scroll(){
+		    
+		    el.addEventListener("touchstart", function(event) {
+		        scrollStartPos=this.scrollLeft+event.touches[0].pageX;
+		        event.preventDefault();
+		    },false);
+		    el.addEventListener("touchmove", function(event) {
+		        this.scrollLeft=scrollStartPos-event.touches[0].pageX;
+		        event.preventDefault();
+		    },false);
+		}
+		
+		scroll();
+	}
+}
+
+
+
+

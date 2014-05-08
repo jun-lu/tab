@@ -11,7 +11,7 @@
 	
 	<div>特殊情况，tab长短差距较大</div>
 	<div class="h5-plugin-tab" id="J_Tabs">
-		<div class="h5-plugin-tab-in J_In">
+		<div class="h5-plugin-tab-in J_In" id="xxx">
 			<ul>
 				<li>
 					<a>1111111a111111111</a>
@@ -95,10 +95,16 @@
 			<div class="h5-plugin-tab-silder J_Slider"></div>
 		</div>
 	</div>
+	
+	<div style="width:100%;border:1px solid #000;overflow:scroll;height:50px">
+		
+		<div >11111111111111111111111111122222222222222222222222222244444444444444444444444444444444444444</div>
+		
+	</div>
 	<!--zepto.js and FastClick-->
 	<script src="http://g.tbcdn.cn/ju/??h5-libs/1.0.1/libs.js,h5-compo/1.0.0/compo.js"></script>  
 	<!--Mulitpe.js-->
-	<script type="text/javascript" src="../build/tab.js"></script>
+	<script type="text/javascript" src="../build/app.debug.js"></script>
 	<script type="text/javascript">
 	
 		
@@ -127,13 +133,13 @@
 				}
 	*/
 	
-	var tab2 = new MulitpeTab($('#J_Tabs3'),{
+	var tab = new MulitpeTab($('#J_Tabs3'),{
 		//tab之间的间距
 		gap:20
 		
 	});
 	// 从0开始，这里初始化到第2个tab
-	tab2.go(1);
+	tab.go(1);
 			
 	</script>
 </body>
