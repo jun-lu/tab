@@ -27,6 +27,7 @@
 
 
 ```` html
+	<script src="http://libs.baidu.com/zepto/0.8/zepto.min.js"></script>
 	<script src="../build/tab.js"></script>
 ````
 
