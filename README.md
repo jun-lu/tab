@@ -3,7 +3,7 @@
 * 依赖 zepto.js
 * <http://jun-lu.github.io/tab/demo/app.html>
 
-#### 说明
+## 说明
 
 *  支持
 	* 宽度超过容器左右滑动
@@ -12,7 +12,7 @@
 	* 动态改变tab容器大小
 	
 	
-#### 使用方法
+## 使用方法
 * CSS
 
 
@@ -74,14 +74,14 @@
 
 
 
-##### API
+## API
 
 * `tab.addEventListener(type, handle)`
 
 添加监听事件，目前仅支持一个`onChange`。当tab切换的时候出发
 	
 ```` javascript
-	//tab.addEventListener('onChange', function(index, prevIndex, $element){
+	tab.addEventListener('onChange', function(index, prevIndex, $element){
 		// index 当前激活的tab序号,从0开始算
 		// prevIndex 上一个激活的tab序号，从0开始算
 		// $element 当前被高亮的LI元素
@@ -105,5 +105,5 @@
 	tab.prev()
 ````
 
-* 其他
+## 其他
 	* 建议使用 `FastClick.js` 提高页面 `click` 响应速度
